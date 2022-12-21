@@ -147,6 +147,7 @@ def color_Detect():
             imgStack = stackImages(0.6, ([img, imgHSV], [mask, imgResult]))
             cv2.imshow("imgStack", imgStack)
             cv2.waitKey(1)
+            cv2.destroyAllWindows()
     
 
     path = 'Resources/lambo.png'

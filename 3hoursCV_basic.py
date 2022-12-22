@@ -147,13 +147,13 @@ def color_Detect():
             imgStack = stackImages(0.6, ([img, imgHSV], [mask, imgResult]))
             cv2.imshow("imgStack", imgStack)
             cv2.waitKey(1)
-            cv2.destroyAllWindows()
+            
     
 
     path = 'Resources/lambo.png'
     img = cv2.imread(path)
     imgHSV = cv2.cvtColor(img, COLOR_BGR2HSV)
-    cv2.namedWindow("TrackbarWin")
+    cv2.namedWindow("TrackbarWin",cv2.WINDOW_KEEPRATIO)
     cv2.resizeWindow("TrackbarWin", 640, 240)
     # 所有导航条必须依附于一个windows窗口中
     cv2.createTrackbar("Hue min", "TrackbarWin", 0, 179, onchange)
@@ -162,8 +162,6 @@ def color_Detect():
     cv2.createTrackbar("Sat max", "TrackbarWin", 255, 255, onchange)
     cv2.createTrackbar("Val min", "TrackbarWin", 0, 255, onchange)
     cv2.createTrackbar("Val max", "TrackbarWin", 255, 255, onchange)
-
-
 
 
 
